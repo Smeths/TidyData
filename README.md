@@ -14,10 +14,10 @@ Which need to be present in the same directory as the script
 
 The script performs the following tasks
 
-1, Merges the training and test data
-2, Extracts the mean accelerations and the standard deviation accelerations
-3, Calculates averages of this data per subject and per activity
-4, Outputs these averages to activiy.txt
+1. Merges the training and test data
+2. Extracts the mean accelerations and the standard deviation accelerations
+3. Calculates averages of this data per subject and per activity
+4. Outputs these averages to activiy.txt
 
 
 
