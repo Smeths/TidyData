@@ -2,7 +2,7 @@ Information about the study design can be found in:
 
 info/study_design.txt
 
-There are 6 data files (1 to 6 below) used to generate the final tidy data set:
+There are 7 data files (1 to 7 below) used to generate the final tidy data set:
 
 Both of these files contain a single column of data that represents the chosen person or 'subject'
 
@@ -22,3 +22,7 @@ These files contain the 561 columns, each column being an element of the 'featur
 The names of the individual columns are specified in:
 
 info/features.txt
+
+This file contains a description of each activity
+
+7. activity_labels.txt
