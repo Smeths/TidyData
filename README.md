@@ -1,5 +1,3 @@
-# My Readme file for the course project
-
 The r script run_analysis.R will take data in from the following files
 
 * activity_labels.txt
