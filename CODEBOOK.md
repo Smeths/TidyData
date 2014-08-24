@@ -1,4 +1,4 @@
-## Information about the study design can be found in:
+Information about the study design can be found in:
 
 info/study_design.txt
 
