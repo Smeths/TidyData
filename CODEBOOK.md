@@ -26,3 +26,14 @@ info/features.txt
 This file contains a description of each activity
 
 * 7, activity_labels.txt
+
+The following variables have been created in the final tidy data set:
+
+Subject - Number of subject undertaking activity
+Activity - Activity being undertaken
+Average x body acc mean  - average x direction acceleration means
+Average y body acc mean  - average y direction acceleration means 
+Average z body acc mean  - average z direction acceleration means 
+Average x body acc std  - average x direction acceleration stds 
+Average y body acc std  - average y direction acceleration stds
+Average z body acc std  - average z direction acceleration stds
