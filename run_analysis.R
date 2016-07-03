@@ -1,3 +1,5 @@
+library(stringr)
+
 # 1, Merges the training and the test sets to create one data set
 
 # reading in train data sets
@@ -15,17 +17,16 @@ train_test_data <- rbind(train_data,test_data)
 
 # 2, Extracts only the measurements on the mean and standard deviation for each measurement
 
-train_test_data <- train_test_data[,1:8]
+colnames <- read.table("info/features.txt")
+colindex <- grep("(mean|std)",colnames$V2)
+
+mean_std_data <- c(1:2,colindex+2)
+
+train_test_data <- train_test_data[,mean_std_data]
 
 #4, Appropriately labels the data set with descriptive variable names
 
-names <- c("Subject","Activity",
-           "x body acc mean",
-           "y body acc mean",
-           "z body acc mean",
-           "x body acc std",
-           "y body acc std",
-           "z body acc std")
+names <- c("Subject","Activity",colnames$V2[colindex])
 
 colnames(train_test_data) <- names
 
@@ -47,14 +48,9 @@ for(i in 1:length(activity_labels[,1])) {
 
 # Intialise average vector
 
-averages <- data.frame(matrix(ncol = 8, nrow = 180))
+averages <- data.frame(matrix(ncol = dim(train_test_data)[2], nrow = 180))
 
-names <- c("Subject","Activity","Average x body acc mean",
-                                "Average y body acc mean",
-                                "Average z body acc mean",
-                                "Average x body acc std",
-                                "Average y body acc std",
-                                "Average z body acc std")
+names <- c("Subject","Activity",paste("Average",colnames$V2[colindex]))
 
 colnames(averages) <- names
 
@@ -67,7 +63,7 @@ for(i in 1:30) {
     averages[count,1] <- i
     averages[count,2] <- activity_labels[j,2]
     sub_act_logic <- train_test_data$Subject == i & train_test_data$Activity == activity_labels[j,2]
-    averages[count,3:8] <- apply(train_test_data[sub_act_logic,3:8],2,mean)
+    averages[count,3:dim(train_test_data)[2]] <- apply(train_test_data[sub_act_logic,3:dim(train_test_data)[2]],2,mean)
     count <- count + 1
   }
 }
